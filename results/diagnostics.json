@@ -1,0 +1,52 @@
+{
+  "family": "Media",
+  "phase_arithmetic_means_ms": {
+    "common_prefix": 43,
+    "AutoCost_completion": 140,
+    "AutoCost_total": 183,
+    "RankBenefit_completion": 132,
+    "RankBenefit_total": 175,
+    "HybridPilot_completion": 117,
+    "HybridPilot_total": 160
+  },
+  "memory_median_peak_MiB": {
+    "AutoCost": 119,
+    "RankBenefit": 122,
+    "HybridPilot": 120
+  },
+  "spill_64MiB_geomean_ms": {
+    "AutoCost": 149,
+    "RankBenefit": 145,
+    "HybridPilot": 134
+  },
+  "cohort_width": [
+    16,
+    64,
+    256
+  ],
+  "cohort_HybridPilot_geomean_ms": [
+    113,
+    106,
+    112
+  ],
+  "cohort_AutoCost_geomean_ms": [
+    125,
+    122,
+    121
+  ],
+  "maintenance_arithmetic_mean_ms": {
+    "AutoCost": 4.8,
+    "RankBenefit": 8.9,
+    "HybridPilot": 5.6
+  },
+  "overlap_queries": 80,
+  "R_settled_pending_pct": 23,
+  "endpoint_overcredit_pct": 18,
+  "overlap_own_geomean_ms": 109,
+  "overlap_endpoint_geomean_ms": 121,
+  "long_probe_queries": 60,
+  "long_probe_close_only_geomean_ms": 171,
+  "long_probe_open_cost_geomean_ms": 145,
+  "long_probe_AutoCost_geomean_ms": 141,
+  "R_settled_pending_definition": "direct terminal R qualification of admitted near candidates, excludes threshold-only retirement"
+}

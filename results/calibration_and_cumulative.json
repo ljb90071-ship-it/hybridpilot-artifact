@@ -1,0 +1,123 @@
+{
+  "calibration": {
+    "states_per_family": 128,
+    "request_seeds": {
+      "Catalog": 2101,
+      "Documents": 2102,
+      "Media": 2103
+    },
+    "gain_unit": "competitors",
+    "time_unit": "ms",
+    "pooling": "arithmetic means of totals; component zero-work observations included",
+    "alpha": 0.25,
+    "cumulative_pseudocount_multiplier": 3,
+    "initial_pairs": {
+      "Catalog": {
+        "V": [
+          16,
+          0.35
+        ],
+        "P": [
+          144,
+          0.65
+        ],
+        "VP": [
+          160,
+          1.0
+        ],
+        "R": [
+          128,
+          1.2
+        ]
+      },
+      "Documents": {
+        "V": [
+          12,
+          0.5
+        ],
+        "P": [
+          108,
+          1.1
+        ],
+        "VP": [
+          120,
+          1.6
+        ],
+        "R": [
+          96,
+          1.4
+        ]
+      },
+      "Media": {
+        "V": [
+          24,
+          0.6
+        ],
+        "P": [
+          216,
+          1.4
+        ],
+        "VP": [
+          240,
+          2.0
+        ],
+        "R": [
+          160,
+          1.8
+        ]
+      }
+    }
+  },
+  "fixed_dispatch_cumulative": {
+    "family": "Media",
+    "states": 120,
+    "geomean_ms": 109,
+    "episode_geomean_ms": 106
+  },
+  "prior_sensitivity": {
+    "family_order": [
+      "Catalog",
+      "Documents",
+      "Media"
+    ],
+    "scales": [
+      0.25,
+      1,
+      4
+    ],
+    "HybridPilot_geomean_ms": [
+      [
+        59,
+        82,
+        110
+      ],
+      [
+        57,
+        80,
+        106
+      ],
+      [
+        60,
+        84,
+        114
+      ]
+    ],
+    "Cumulative_geomean_ms": [
+      [
+        60,
+        84,
+        112
+      ],
+      [
+        59,
+        83,
+        111
+      ],
+      [
+        62,
+        87,
+        116
+      ]
+    ]
+  }
+}

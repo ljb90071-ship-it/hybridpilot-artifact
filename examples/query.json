@@ -1,0 +1,44 @@
+{
+  "distances": [
+    1,
+    5,
+    5,
+    5,
+    4,
+    4,
+    4,
+    4,
+    12,
+    3,
+    10,
+    7
+  ],
+  "eligible": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    false,
+    false
+  ],
+  "witness_advances": [
+    3,
+    5,
+    4,
+    2,
+    8,
+    7,
+    6,
+    4,
+    2,
+    3,
+    1,
+    5
+  ]
+}

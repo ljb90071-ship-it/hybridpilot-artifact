@@ -1,0 +1,6 @@
+group,queries,AutoCost_ms,RankBenefit_ms,HybridPilot_ms
+Dependent near probes,60,151,139,121
+Threshold leverage,60,103,95,84
+Weak bounds,60,86,90,92
+Shared preparation,60,142,148,153
+Cheap membership,60,27,30,30

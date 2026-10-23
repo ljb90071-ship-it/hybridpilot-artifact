@@ -1,0 +1,158 @@
+{
+  "families": {
+    "Catalog": 1101,
+    "Documents": 1102,
+    "Media": 1103
+  },
+  "streams": [
+    "geometry",
+    "witness_layout",
+    "calibration",
+    "requests"
+  ],
+  "macrocenters": 64,
+  "microcenters_per_macrocenter": 64,
+  "intrinsic_dimensions": 16,
+  "microcenter_sigma": 0.25,
+  "ambient_noise_radius_fraction": 0.02,
+  "query_perturbation_radius_fraction": 0.3,
+  "queries_per_family": 600,
+  "k": [
+    10,
+    50,
+    100
+  ],
+  "eligibility_fractions": [
+    0.0001,
+    0.001,
+    0.01,
+    0.03,
+    0.1,
+    0.3
+  ],
+  "VP_cohort": 64,
+  "R_segment": 256,
+  "alpha": 0.25,
+  "slice_target_ms": 1,
+  "witness_yield_interval": 64,
+  "build_row_yield_interval": 4096,
+  "memory_MiB": 256,
+  "spill_budget_MiB": 64,
+  "repetitions": 5,
+  "warmup_runs": 1,
+  "fanout_cap": 4096,
+  "hazard_bins": 16,
+  "prior_weight_per_bin": 16,
+  "tail_weight": 2,
+  "minimum_calibration_probes": 32,
+  "distance_histogram_bins": 32,
+  "sampled_vectors_per_block": 64,
+  "angular_quadrature_points": 16,
+  "benefit_outcomes": 64,
+  "block_occupancy": "balanced within one document",
+  "coordinate_type": "float32",
+  "radius_storage": "recomputed upward enclosing radius",
+  "fanout_inverse_CDF": {
+    "probability": [
+      0,
+      0.5,
+      0.99,
+      1
+    ],
+    "values": [
+      "0",
+      "family median",
+      "family p99",
+      "4096"
+    ],
+    "interpolation": "linear in log(1+F), round upward"
+  },
+  "eligibility_assignment": {
+    "uniform_fraction": 0.5,
+    "near_macrocenter_fraction": 0.5,
+    "near_assignment_mass": 0.9,
+    "remainder_mass": 0.1,
+    "sampling": "without replacement, fill capacity outward"
+  },
+  "positive_witness_quartiles": [
+    "first",
+    "last"
+  ],
+  "positive_witness_quartile_fractions": [
+    0.5,
+    0.5
+  ],
+  "empty_eligible_posting": "allocate one witness slot",
+  "predicate_order": [
+    "dimension",
+    "availability"
+  ],
+  "weak_bound_variant": {
+    "intrinsic_dimensions": "ambient dimension",
+    "spread_multiplier": 4
+  },
+  "measurements": {
+    "query_statistic": "median of five elapsed runs after one warm-up",
+    "family_statistics": [
+      "geometric mean",
+      "95th percentile"
+    ],
+    "phase_statistic": "arithmetic mean of segments in median-selected run",
+    "setup_seconds": {
+      "Catalog": 91,
+      "Documents": 84,
+      "Media": 129
+    }
+  },
+  "fanout_bins": [
+    [
+      1,
+      4
+    ],
+    [
+      5,
+      16
+    ],
+    [
+      17,
+      64
+    ],
+    [
+      65,
+      256
+    ],
+    [
+      257,
+      4096
+    ]
+  ],
+  "bound_calibration_groups": "quartiles of block lower-bound distance",
+  "calibration_backoff": [
+    "pool bound quartiles",
+    "pool neighboring fanout bins"
+  ],
+  "calibration_backoff_trigger": "fewer than 32 completed calibration probes",
+  "positive_witness_selection": "uniform within assigned first/last quartile",
+  "posting_order": "ascending witness ID",
+  "geometry_diagnostic": {
+    "seed_sequence": "[family_seed,0,stream_id]",
+    "streams": {
+      "centers": 10,
+      "requests": 20,
+      "eligibility_counts": 30
+    },
+    "radius_envelope": "1.02*r+1e-4",
+    "k_envelope": 100,
+    "denominator_blocks": 4096,
+    "summary": "median across 600 direction-free k=100 upper-bound percentages",
+    "query_modes": "50 uniform / 50 near per eligibility fraction",
+    "k_marginals": "200 each; each fraction has one rotating k with 34 requests, other two with 33"
+  },
+  "threshold_removals": {
+    "policy": "HybridPilot",
+    "aggregation": "sum threshold retirements / sum initial post-prefix C across queries with C>0",
+    "event_order": "commit at old tau then apply new tau"
+  },
+  "completion_rate_calibration_file": "results/calibration_and_cumulative.json",
+  "simple_controls_file": "results/simple_controls.csv"
+}

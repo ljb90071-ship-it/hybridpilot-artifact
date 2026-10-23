@@ -1,0 +1,4 @@
+budget_ms,physical_geomean_ms,logical_geomean_ms,queries
+0.25,124,112,120
+1,115,106,120
+4,129,116,120

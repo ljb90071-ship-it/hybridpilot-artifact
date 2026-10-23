@@ -1,0 +1,125 @@
+{
+  "cases": 2500,
+  "primitive_steps": 102941,
+  "max_steps": 167,
+  "R_resolved_pending": 4206,
+  "boundaries": {
+    "batch_rate_merged": 4,
+    "batch_rate_split": 4.25,
+    "survival_remaining": 8
+  },
+  "dependency": {
+    "split": {
+      "time_units": 18,
+      "trace": [
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1063
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1062
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1061
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1060
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1059
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1058
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1057
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1056
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1055
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1054
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1053
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1052
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1051
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1050
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1049
+        },
+        {
+          "action": "R",
+          "gain": 1,
+          "remaining": 1048
+        },
+        {
+          "action": "V",
+          "gain": 0,
+          "remaining": 1048
+        },
+        {
+          "action": "P",
+          "gain": 1048,
+          "remaining": 0
+        }
+      ],
+      "exact_best_distance": 1
+    },
+    "pooled": {
+      "time_units": 2,
+      "trace": [
+        {
+          "action": "V",
+          "gain": 0,
+          "remaining": 1064
+        },
+        {
+          "action": "P",
+          "gain": 1064,
+          "remaining": 0
+        }
+      ],
+      "exact_best_distance": 1
+    }
+  }
+}

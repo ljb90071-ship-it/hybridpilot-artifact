@@ -1,0 +1,5 @@
+grouping,update,queries,geomean_ms
+separate,physical,120,139
+separate,logical,120,132
+joint,physical,120,115
+joint,logical,120,106

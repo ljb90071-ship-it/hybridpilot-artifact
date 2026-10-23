@@ -1,0 +1,19 @@
+policy,family,queries,geomean_ms,p95_ms
+SplitRate,Catalog,600,78,358
+SplitRate,Documents,600,105,452
+SplitRate,Media,600,149,691
+Yield episodes,Catalog,600,70,309
+Yield episodes,Documents,600,96,407
+Yield episodes,Media,600,132,582
+Work episodes,Catalog,600,67,291
+Work episodes,Documents,600,91,378
+Work episodes,Media,600,126,539
+AutoCost,Catalog,600,64,271
+AutoCost,Documents,600,88,352
+AutoCost,Media,600,122,487
+RankBenefit,Catalog,600,62,260
+RankBenefit,Documents,600,85,339
+RankBenefit,Media,600,116,465
+HybridPilot,Catalog,600,57,236
+HybridPilot,Documents,600,80,327
+HybridPilot,Media,600,106,431

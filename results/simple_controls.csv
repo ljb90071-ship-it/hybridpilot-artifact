@@ -1,0 +1,16 @@
+policy,family,queries,geomean_ms
+VP-only,Catalog,600,73
+VP-only,Documents,600,111
+VP-only,Media,600,140
+R-only,Catalog,600,89
+R-only,Documents,600,99
+R-only,Media,600,159
+OnceCost,Catalog,600,68
+OnceCost,Documents,600,94
+OnceCost,Media,600,129
+Cumulative,Catalog,600,59
+Cumulative,Documents,600,83
+Cumulative,Media,600,111
+HybridPilot,Catalog,600,57
+HybridPilot,Documents,600,80
+HybridPilot,Media,600,106
