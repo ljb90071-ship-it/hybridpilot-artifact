@@ -3,7 +3,7 @@
 **HybridPilot: Crediting Completion Work in Exact Vector–Relational Top-k Queries**
 
 HybridPilot credits completed dependent work to the lane that performed it,
-while keeping unfinished work visible in scheduling decisions. Follow the
+while keeping unfinished work visible in scheduling decisions. Its response analysis connects logical decay to changes in the remaining query work. Follow the
 mechanism through saved-work completion traces, invariant checks and result
 tables, starting with the [paper map](paper-map.md).
 
@@ -41,7 +41,7 @@ saved-work progress and invariance under extra yields on an unchanged primitive
 trace. Focused cases cover cancellation, conditional residual work, ties,
 buffered positives and the 18-versus-2 example. Both commands write JSON.
 
-## Analyze results and geometry
+## Analyze results, response, and geometry
 
 `analyze_results.py` checks row counts, numeric constraints, speedup ratios and
 phase arithmetic, then renders Markdown tables from aggregate CSV values.
@@ -59,3 +59,16 @@ python analysis/geometry_bounds.py --output geometry-bounds.csv
 ```
 
 It computes 1,800 center/count bounds from the stated geometry and writes CSV.
+
+The response calculation checks rate crossovers at physical yields, including
+unfinished costs and gain commits at closure:
+
+~~~sh
+python analysis/check_response.py
+~~~
+
+It writes exact rational results to results/response_computed.csv and JSON.
+The [paired witness-order comparison](results/phase_order.csv) and its
+[design](results/phase_order_design.json) isolate early versus late qualifying
+witnesses while preserving query answers. Figure 1 illustrates the separate
+roles of transferring competitors and retiring them.

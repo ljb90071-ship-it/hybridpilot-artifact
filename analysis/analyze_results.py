@@ -5,9 +5,9 @@ ROOT=Path(__file__).resolve().parents[1]
 def read(name):
     with (ROOT/'results'/name).open(newline='') as f:return list(csv.DictReader(f))
 p=argparse.ArgumentParser();p.add_argument('--output',default='result-tables.md');a=p.parse_args()
-files=['workloads.csv','latency.csv','regimes.csv','accounting.csv','slices.csv','simple_controls.csv']
+files=['workloads.csv','latency.csv','regimes.csv','accounting.csv','slices.csv','simple_controls.csv','phase_order.csv']
 data={n:read(n) for n in files}
-assert [len(data[n]) for n in files]==[3,18,5,4,3,15]
+assert [len(data[n]) for n in files]==[3,18,5,4,3,15,6]
 l=data['latency.csv']; assert len({(r['family'],r['policy']) for r in l})==18
 assert all(int(r['queries'])==600 and 0<float(r['geomean_ms'])<=float(r['p95_ms']) for r in l)
 c=json.loads((ROOT/'results/calibration_and_cumulative.json').read_text())
@@ -15,6 +15,9 @@ for pair in c['calibration']['initial_pairs'].values():
     assert abs(pair['V'][0]+pair['P'][0]-pair['VP'][0])<1e-9
     assert abs(pair['V'][1]+pair['P'][1]-pair['VP'][1])<1e-9
 assert len({(r['family'],r['policy']) for r in data['simple_controls.csv']})==15
+ph={(r['policy'],r['ordering']):float(r['geomean_completion_ms']) for r in data['phase_order.csv']}
+assert len(ph)==6
+assert round(ph['Cumulative','early_then_late']/ph['HybridPilot','early_then_late'],2)==1.19
 ratios=[]
 for family in ['Catalog','Documents','Media']:
     row={r['policy']:float(r['geomean_ms']) for r in l if r['family']==family}
@@ -32,4 +35,4 @@ for name,rows in data.items():
     keys=list(rows[0]);text+=['## '+name,'','| '+' | '.join(keys)+' |','| '+' | '.join(['---']*len(keys))+' |']
     text+=['| '+' | '.join(r[k] for k in keys)+' |' for r in rows];text+=['']
 text+=['AutoCost / HybridPilot geometric-mean ratios: '+', '.join(f'{v:.2f}' for v in ratios)+'.']
-Path(a.output).write_text('\n'.join(text)+'\n');print('Validated six CSV tables and phase arithmetic; rendered archived values.')
+Path(a.output).write_text('\n'.join(text)+'\n');print('Validated seven CSV tables and phase arithmetic; rendered archived values.')

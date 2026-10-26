@@ -1,0 +1,41 @@
+{
+  "experiment": "paired unread witness-order comparison",
+  "family": "Media",
+  "distinct_base_completion_states": 60,
+  "variants_per_state": 2,
+  "total_state_variants": 120,
+  "k_counts": {
+    "10": 20,
+    "50": 20,
+    "100": 20
+  },
+  "state_selection_seed": 3101,
+  "groups": "two equal groups of consecutive unprocessed VP cohorts; selected postings unvisited by both paths and without an active continuation",
+  "placement": "first quartile versus last quartile of positive postings; swap between groups",
+  "held_fixed": [
+    "document distances",
+    "document qualification labels",
+    "posting lengths",
+    "non-ID payload multiset within each selected posting",
+    "qualification counts",
+    "witness IDs and ascending ID traversal",
+    "answer identifiers",
+    "common-prefix committed facts and cursors outside selected postings",
+    "initial priors"
+  ],
+  "mutated": "placement of non-ID payloads among unvisited posting slots; complete ID-plus-payload tuples are not invariant",
+  "calibration": "same family component/joint priors as Table 2, no order-specific retuning",
+  "target_slice_ms": 1,
+  "VP_cohort": 64,
+  "R_segment": 256,
+  "memory_MiB": 256,
+  "statistic": "geometric mean of per-state median completion times over five runs after one warm-up",
+  "timing": "completion only; state reconstruction excluded; online selection and execution included",
+  "directional_ratios": {
+    "early_then_late_cumulative_over_hybrid": 1.1911764705882353,
+    "late_then_early_cumulative_over_hybrid": 0.972972972972973
+  },
+  "aggregation_note": "Two 60-state ordering columns; a pair shares its base state. No per-state measurements or confidence intervals inferred from aggregates.",
+  "selection_precondition": "neither P nor R has visited a selected posting; no active continuation, pending qualification observation, or already-read selected payload is changed",
+  "state_selection_condition": "two consecutive equal-size cohort groups with postings untouched by both paths; no active continuation for altered postings"
+}

@@ -154,5 +154,8 @@
     "event_order": "commit at old tau then apply new tau"
   },
   "completion_rate_calibration_file": "results/calibration_and_cumulative.json",
-  "simple_controls_file": "results/simple_controls.csv"
+  "simple_controls_file": "results/simple_controls.csv",
+  "phase_order_design": "results/phase_order_design.json",
+  "phase_order_results": "results/phase_order.csv",
+  "response_analysis": "analysis/check_response.py"
 }

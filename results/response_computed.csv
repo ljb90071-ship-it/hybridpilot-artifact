@@ -1,0 +1,11 @@
+old_high_episodes,controller,completed_low_episodes,open_low_time,selected_work_units,selected_work_decimal,rate_at_switch,rival_rate
+0,episode,2,3/4,11/4,2.75,79/20,4
+0,cumulative,4,1/4,17/4,4.25,112/29,4
+4,episode,2,3/4,11/4,2.75,79/20,4
+4,cumulative,9,1/2,19/2,9.5,130/33,4
+16,episode,2,3/4,11/4,2.75,79/20,4
+16,cumulative,25,1/2,51/2,25.5,354/89,4
+64,episode,2,3/4,11/4,2.75,79/20,4
+64,cumulative,89,1/2,179/2,89.5,1250/313,4
+256,episode,2,3/4,11/4,2.75,79/20,4
+256,cumulative,345,1/2,691/2,345.5,4834/1209,4

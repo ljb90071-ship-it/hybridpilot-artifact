@@ -1,0 +1,109 @@
+{
+  "scope": "Exact calculation of first rate crossover; no latency benchmark.\n\nA selected VP lane completes N observations (gain,time)=(8,1), followed\nby (1,1) observations. R remains runnable at rate 4. Each low observation\npublishes its gain only on completion; yields occur at quarters of a unit.\nAt a tie VP retains service. Stop at the first decision selecting R.\n",
+  "unit": "abstract selected-lane work units",
+  "alpha": 0.25,
+  "yield_work_units": 0.25,
+  "rows": [
+    {
+      "old_high_episodes": 0,
+      "controller": "episode",
+      "completed_low_episodes": 2,
+      "open_low_time": "3/4",
+      "selected_work_units": "11/4",
+      "selected_work_decimal": 2.75,
+      "rate_at_switch": "79/20",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 0,
+      "controller": "cumulative",
+      "completed_low_episodes": 4,
+      "open_low_time": "1/4",
+      "selected_work_units": "17/4",
+      "selected_work_decimal": 4.25,
+      "rate_at_switch": "112/29",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 4,
+      "controller": "episode",
+      "completed_low_episodes": 2,
+      "open_low_time": "3/4",
+      "selected_work_units": "11/4",
+      "selected_work_decimal": 2.75,
+      "rate_at_switch": "79/20",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 4,
+      "controller": "cumulative",
+      "completed_low_episodes": 9,
+      "open_low_time": "1/2",
+      "selected_work_units": "19/2",
+      "selected_work_decimal": 9.5,
+      "rate_at_switch": "130/33",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 16,
+      "controller": "episode",
+      "completed_low_episodes": 2,
+      "open_low_time": "3/4",
+      "selected_work_units": "11/4",
+      "selected_work_decimal": 2.75,
+      "rate_at_switch": "79/20",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 16,
+      "controller": "cumulative",
+      "completed_low_episodes": 25,
+      "open_low_time": "1/2",
+      "selected_work_units": "51/2",
+      "selected_work_decimal": 25.5,
+      "rate_at_switch": "354/89",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 64,
+      "controller": "episode",
+      "completed_low_episodes": 2,
+      "open_low_time": "3/4",
+      "selected_work_units": "11/4",
+      "selected_work_decimal": 2.75,
+      "rate_at_switch": "79/20",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 64,
+      "controller": "cumulative",
+      "completed_low_episodes": 89,
+      "open_low_time": "1/2",
+      "selected_work_units": "179/2",
+      "selected_work_decimal": 89.5,
+      "rate_at_switch": "1250/313",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 256,
+      "controller": "episode",
+      "completed_low_episodes": 2,
+      "open_low_time": "3/4",
+      "selected_work_units": "11/4",
+      "selected_work_decimal": 2.75,
+      "rate_at_switch": "79/20",
+      "rival_rate": 4
+    },
+    {
+      "old_high_episodes": 256,
+      "controller": "cumulative",
+      "completed_low_episodes": 345,
+      "open_low_time": "1/2",
+      "selected_work_units": "691/2",
+      "selected_work_decimal": 345.5,
+      "rate_at_switch": "4834/1209",
+      "rival_rate": 4
+    }
+  ],
+  "checks_passed": true
+}

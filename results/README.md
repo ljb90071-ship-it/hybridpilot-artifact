@@ -8,7 +8,7 @@ The small reference traces in `../examples/` have a separate work-unit scale.
 |---|---|
 | workloads.csv | Table 1. documents is an integer count; dimensions/relations/fanout are counts; radius is the vector generator's radius parameter; relevant_blocks_envelope_upper_pct is the median direction-independent k=100 upper-bound percentage over 4096 blocks (not the exact-threshold percentage); entry_Q_over_u is the median initial contribution ratio; threshold_removals_pct pools HybridPilot threshold-only retirements divided by pooled initial post-prefix C over C>0 requests, after direct commits at the old threshold. |
 | latency.csv | Table 3. queries=600 per family. geomean_ms and p95_ms aggregate per-query median elapsed time across five runs after one warm-up. Policies include online preparation, planning, scoring, qualification, refinement, metadata, spill service and final sorting. |
-| regimes.csv | Table 5. Each independent group has 60 queries; all three policy columns are geometric-mean milliseconds. These are not a partition of Table 3. Cost/Benefit in the paper mean AutoCost/RankBenefit here. |
+| regimes.csv | Table 6. Each independent group has 60 queries; all three policy columns are geometric-mean milliseconds. These are not a partition of Table 3. Cost/Benefit in the paper mean AutoCost/RankBenefit here. |
 | accounting.csv | Figure 2(a). 120 Media states, same within-lane dispatch rules. Separate/joint grouping crossed with physical/logical updates; geomean_ms is completion time. |
 | slices.csv | Figure 2(b). The same 120 states with joint credit, three target physical slice budgets in ms. Both response columns are completion-time geometric means in ms. |
 | diagnostics.json | Media phase arithmetic means, memory medians in MiB, spill and cohort geometric means in ms, maintenance arithmetic means, and separate overlap/long-probe groups. Each field names its unit/aggregation. |
@@ -19,7 +19,7 @@ per-query records or error bars are inferred from these summaries. Setup index
 and calibration time is excluded from query latency; the setup times reported
 in Section 7.1 are 91/84/129 seconds for Catalog/Documents/Media.
 
-Figure 1 is a schematic execution order, not a measured time axis. Figure 2(b)
+Figure 1 illustrates a 10-to-10-to-2 competitor-count transition. Scoring transfers three IDs to pending qualification; R qualifies one and retires seven through the threshold. Its times are illustrative work units. Figure 2(b)
 uses a base-4 logarithmic budget axis and an explicitly labeled nonzero response
 axis; the left bar plot begins at zero. The fixed-trace partition identity does
 not assert that changing a runtime slice budget preserves latency.
@@ -55,3 +55,18 @@ The overlap diagnostic's 23 percent means direct terminal qualifications by R
 among admitted near candidates; threshold-only retirements are excluded.
 The finite reference exposes threshold retirements separately and tests their
 policy dependence on a two-ID instance (vector 1/2, relational 0).
+
+## Phase response and paired order
+
+response_computed.csv/json is computed by analysis/check_response.py from
+exact rational gain/time updates. Its unit is selected-lane work, with gain
+committed at each unit's end and decisions at quarter units. N counts completed
+old high-gain observations. Both initial rates equal 8, and the alternative
+lane's unchanged rate is 4. The first switch includes open execution cost.
+The calculation stops at that switch.
+
+phase_order.csv supplies Table 5: completion-time geometric-mean ms for 60
+paired Media states in each of two witness-placement variants. Full protocol
+and fixed quantities are in phase_order_design.json. These states are separate
+from the 120-state accounting comparison and from the 600-request family
+totals. Reconstruction is excluded; online policy and execution time is included.

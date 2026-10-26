@@ -80,4 +80,15 @@ Generated from the supplied CSV files; times and aggregation are defined in resu
 | HybridPilot | Documents | 600 | 80 |
 | HybridPilot | Media | 600 | 106 |
 
+## phase_order.csv
+
+| policy | ordering | paired_states | geomean_completion_ms |
+| --- | --- | --- | --- |
+| AutoCost | early_then_late | 60 | 143 |
+| AutoCost | late_then_early | 60 | 141 |
+| Cumulative | early_then_late | 60 | 162 |
+| Cumulative | late_then_early | 60 | 144 |
+| HybridPilot | early_then_late | 60 | 136 |
+| HybridPilot | late_then_early | 60 | 148 |
+
 AutoCost / HybridPilot geometric-mean ratios: 1.12, 1.10, 1.15.

@@ -50,7 +50,7 @@ Equation 9 from a stopping-count distribution. An exhausted continuation is
 rejected. The example with nine probes stopping at 1 and one at 10 gives eight
 remaining advances after survival to position 2. The paper's hazard calibration,
 backoff, vector histograms and RankBenefit lookahead are described by the
-configuration and manuscript; they are not implemented by this finite executor.
+configuration and manuscript; the finite executor supplies the saved-work accounting layer.
 
 `dependency.run` is the Section 4.1 example: 64 IDs in A, 1,000 in B, an incumbent
 at distance 10, and a decisive witness at distance 1. Split selection includes
@@ -60,13 +60,12 @@ factorial comparison in Figure 2.
 
 ## Relationship to the system
 
-The reference models the state and accounting protocol. It does not provide a
-DBMS build, joins over the large workloads, interval/refinement distance kernels,
-spill files, a common-prefix implementation, or the full cost/benefit estimators.
-The executable completion loop uses k=1; the paper's experiment settings use
-k=10/50/100. The theorem applies to general k under its stated conditions; these
-finite checks are examples, not a universal proof. Buffered-positive ordering is
-covered by a focused boundary check rather than a batched buffer implementation.
+The executable isolates exact top-1 completion using four-ID blocks,
+two-ID cohorts, rational operation costs and saved witness cursors. The
+configuration describes the larger vector/join workload with k=10/50/100.
+The mathematical stopping argument covers general k through the shared heap
+and residual certificate. Focused checks also exercise buffered-positive
+ordering and identifier ties.
 
 Finite progress assumes finite saved traversals and successful completion of
 access, refinement and I/O. A zero-gain step may consume useful work. The
