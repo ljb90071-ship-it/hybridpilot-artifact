@@ -157,5 +157,18 @@
   "simple_controls_file": "results/simple_controls.csv",
   "phase_order_design": "results/phase_order_design.json",
   "phase_order_results": "results/phase_order.csv",
-  "response_analysis": "analysis/check_response.py"
+  "response_analysis": "analysis/check_response.py",
+  "main_request_strata": {
+    "file": "results/main_strata.csv",
+    "descriptor": "VP-only qualification time divided by qualification plus vector scoring time after common prefix",
+    "thresholds": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "zero_work_burden": 0,
+    "tie_ratio_bounds": [
+      0.9900990099009901,
+      1.01
+    ]
+  }
 }

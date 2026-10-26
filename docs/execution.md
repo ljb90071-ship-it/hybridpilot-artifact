@@ -97,3 +97,12 @@ For threshold attribution, first evaluate the committed state at the old
 threshold, then at the new threshold. Their difference is threshold retirement;
 the earlier difference from pre-event C is direct retirement. This split is
 policy-dependent even though total retirement equals initial C.
+
+
+For the remaining-cost model, a posting position is an outer record; processing
+it searches its inner joins until a qualifying joined witness or exhaustion.
+The finite stopping-position calculation in src/survival.py returns expected
+remaining positions. In the paper's time model, each survival weight multiplies
+the calibrated search cost of that position, including future inner joins.
+For an active position, its saved continuation supplies remaining cost in place
+of full-position cost. This prevents double charging already executed inner work.

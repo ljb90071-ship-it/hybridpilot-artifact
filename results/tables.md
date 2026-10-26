@@ -91,4 +91,27 @@ Generated from the supplied CSV files; times and aggregation are defined in resu
 | HybridPilot | early_then_late | 60 | 136 |
 | HybridPilot | late_then_early | 60 | 148 |
 
+## main_strata.csv
+
+| family | stratum | n | baseline | baseline_over_hybrid_gm | log_ratio_sum | hybrid_wins | ties | baseline_wins |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Catalog | Low | 200 | AutoCost | 0.96 | -8.164398904051033 | 65 | 12 | 123 |
+| Catalog | Middle | 240 | AutoCost | 1.1 | 22.874443153037983 | 165 | 14 | 61 |
+| Catalog | High | 160 | AutoCost | 1.408367921751567 | 54.78904506608605 | 134 | 8 | 18 |
+| Catalog | Low | 200 | Cumulative | 0.995 | -1.0025083647088573 | 65 | 60 | 75 |
+| Catalog | Middle | 240 | Cumulative | 1.025 | 5.926227021689139 | 110 | 80 | 50 |
+| Catalog | High | 160 | Cumulative | 1.103569491730518 | 15.767986985721361 | 105 | 35 | 20 |
+| Documents | Low | 180 | AutoCost | 0.96 | -7.34795901364593 | 45 | 12 | 123 |
+| Documents | Middle | 240 | AutoCost | 1.1 | 22.874443153037983 | 130 | 15 | 95 |
+| Documents | High | 180 | AutoCost | 1.260416666666667 | 41.65962374320291 | 151 | 10 | 19 |
+| Documents | Low | 180 | Cumulative | 0.995 | -0.9022575282379716 | 50 | 60 | 70 |
+| Documents | Middle | 240 | Cumulative | 1.025 | 5.926227021689139 | 100 | 85 | 55 |
+| Documents | High | 180 | Cumulative | 1.0994414763814055 | 17.064414380178672 | 115 | 40 | 25 |
+| Media | Low | 160 | AutoCost | 0.96 | -6.531519123240827 | 40 | 10 | 110 |
+| Media | Middle | 240 | AutoCost | 1.1 | 22.874443153037983 | 164 | 12 | 64 |
+| Media | High | 200 | AutoCost | 1.4049914701709596 | 68.00624634291647 | 177 | 10 | 13 |
+| Media | Low | 160 | Cumulative | 0.995 | -0.8020066917670858 | 40 | 55 | 65 |
+| Media | Middle | 240 | Cumulative | 1.025 | 5.926227021689139 | 110 | 80 | 50 |
+| Media | High | 200 | Cumulative | 1.1192426150027281 | 22.530443990238197 | 135 | 40 | 25 |
+
 AutoCost / HybridPilot geometric-mean ratios: 1.12, 1.10, 1.15.

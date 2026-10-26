@@ -9,12 +9,12 @@
 | Section 5, Algorithm 1, Equations 5–6 | [reference](src/completion.py), [example trace](examples/trace.json) | Fixed units, saved cursors, pinned probe, own-lane gain/time, provisional rates and logical closure. Completion phase only. |
 | Proposition 2 | [checks](tests/check_core.py) | Conservation and yield subdivision replay on fixed primitive traces. |
 | Proposition 3 | [reference](src/completion.py) | Every step advances saved work; finite-step bound checked. |
-| Figure 1 | [figure](figures/episodes.pdf), [execution contract](docs/execution.md) | Schematic interleaving and lane attribution. |
+| Figure 1 | [figure](figures/episodes.pdf), [execution contract](docs/execution.md) | Score-to-probe grouping and alternative R completion with distinct lane attribution. |
 | Section 6.2, Equation 9 | [survival estimator](src/survival.py), [configuration](configs/experiment.json) | Finite conditional residual-work calculation; calibration design parameters. |
 | Section 6.3 | [configuration](configs/experiment.json) | RankBenefit lookahead count and shared model settings; not a full lookahead engine. |
 | Table 1 / Section 7.1 | [workloads](results/workloads.csv), [configuration](configs/experiment.json) | Family scales, residual geometry, workload and execution settings. |
 | Table 3 | [latencies](results/latency.csv), [analysis](analysis/analyze_results.py) | All 18 policy/family rows and derived speedups. |
-| Table 6 | [mechanism groups](results/regimes.csv) | All five groups and three policies. |
+| Section 7.4 | [mechanism groups](results/regimes.csv) | Separate targeted groups; negative-regime comparisons remain in the paper. |
 | Figure 2(a) | [factorial results](results/accounting.csv), [figure](figures/accounting.pdf) | Four cells, fixed dispatcher. |
 | Figure 2(b) | [slice results](results/slices.csv), [figure](figures/accounting.pdf) | All six values with budget and units. |
 | Sections 7.4–7.5 | [diagnostics](results/diagnostics.json) | Overlap, open-cost, phase, memory, spill and cohort summaries. |
@@ -30,4 +30,6 @@ The executable tests and aggregate result analysis are separate entry points.
 | Cumulative control | src/completion.py, tests/check_core.py | Executable finite cumulative selector and matched initial pseudototals. |
 
 | Section 5.4 | analysis/check_response.py, results/response_computed.csv | Exact provisional-rate crossings with open costs. |
-| Table 5 / Section 7.3 | results/phase_order.csv, results/phase_order_design.json | Paired unread-witness placement, completion-only geometric means. |
+| Table 6 / Section 7.3 | results/phase_order.csv, results/phase_order_design.json | Paired unread-witness placement, completion-only geometric means. |
+
+| Table 5 / Section 7.2 | results/main_strata.csv, analysis/check_strata.py | Main-request burden partition, paired ratios and win/tie/loss counts. |

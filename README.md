@@ -26,6 +26,7 @@ output paths may be changed to any writable location.
 python analysis/run_example.py --input examples/query.json --policy hybrid --output example-trace.json
 python tests/check_core.py --output core-checks.json
 python analysis/analyze_results.py --output result-tables.md
+python analysis/check_strata.py
 ```
 
 The example computes an exact top-1 completion trace from integer distances,
@@ -46,6 +47,8 @@ buffered positives and the 18-versus-2 example. Both commands write JSON.
 `analyze_results.py` checks row counts, numeric constraints, speedup ratios and
 phase arithmetic, then renders Markdown tables from aggregate CSV values.
 The [result dictionary](results/README.md) defines fields and units.
+The [main-request partition](results/main_strata.csv) locates gains by qualification
+burden and retains paired wins, ties, and losses against AutoCost and Cumulative.
 
 The completion example uses a full top-1 heap, four-document blocks and
 two-document VP cohorts. `configs/experiment.json` records the paper's 64/256-ID
@@ -70,5 +73,5 @@ python analysis/check_response.py
 It writes exact rational results to results/response_computed.csv and JSON.
 The [paired witness-order comparison](results/phase_order.csv) and its
 [design](results/phase_order_design.json) isolate early versus late qualifying
-witnesses while preserving query answers. Figure 1 illustrates the separate
-roles of transferring competitors and retiring them.
+witnesses while preserving query answers. Figure 1 connects score production to the completed probe observation, then
+shows how credit changes when the relational lane finishes first.

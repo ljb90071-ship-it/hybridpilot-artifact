@@ -1,4 +1,4 @@
-"""Finite-cap conditional residual witness estimator (Equation 9)."""
+"""Finite-cap conditional remaining posting positions (Equation 9)."""
 from fractions import Fraction
 
 def remaining(stopping_counts, spent):

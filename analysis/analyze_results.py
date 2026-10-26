@@ -5,9 +5,9 @@ ROOT=Path(__file__).resolve().parents[1]
 def read(name):
     with (ROOT/'results'/name).open(newline='') as f:return list(csv.DictReader(f))
 p=argparse.ArgumentParser();p.add_argument('--output',default='result-tables.md');a=p.parse_args()
-files=['workloads.csv','latency.csv','regimes.csv','accounting.csv','slices.csv','simple_controls.csv','phase_order.csv']
+files=['workloads.csv','latency.csv','regimes.csv','accounting.csv','slices.csv','simple_controls.csv','phase_order.csv','main_strata.csv']
 data={n:read(n) for n in files}
-assert [len(data[n]) for n in files]==[3,18,5,4,3,15,6]
+assert [len(data[n]) for n in files]==[3,18,5,4,3,15,6,18]
 l=data['latency.csv']; assert len({(r['family'],r['policy']) for r in l})==18
 assert all(int(r['queries'])==600 and 0<float(r['geomean_ms'])<=float(r['p95_ms']) for r in l)
 c=json.loads((ROOT/'results/calibration_and_cumulative.json').read_text())
@@ -35,4 +35,4 @@ for name,rows in data.items():
     keys=list(rows[0]);text+=['## '+name,'','| '+' | '.join(keys)+' |','| '+' | '.join(['---']*len(keys))+' |']
     text+=['| '+' | '.join(r[k] for k in keys)+' |' for r in rows];text+=['']
 text+=['AutoCost / HybridPilot geometric-mean ratios: '+', '.join(f'{v:.2f}' for v in ratios)+'.']
-Path(a.output).write_text('\n'.join(text)+'\n');print('Validated seven CSV tables and phase arithmetic; rendered archived values.')
+Path(a.output).write_text('\n'.join(text)+'\n');print('Validated eight CSV tables and phase arithmetic; rendered archived values.')
