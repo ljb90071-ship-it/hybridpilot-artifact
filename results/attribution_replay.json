@@ -1,0 +1,262 @@
+{
+  "probe_alternative": [
+    {
+      "lane": "VP",
+      "gain": 8,
+      "time": 3
+    }
+  ],
+  "checkpoint_count": 2,
+  "own_slice": {
+    "rates": {
+      "VP": "12/5",
+      "R": "26/7"
+    },
+    "choice": "R",
+    "credits": [
+      {
+        "lane": "VP",
+        "gain": 0,
+        "time": 2
+      },
+      {
+        "lane": "R",
+        "gain": 8,
+        "time": 1
+      }
+    ],
+    "answer": "v",
+    "trace": [
+      {
+        "lane": "VP",
+        "operation": "score",
+        "identifiers": [
+          "x",
+          "y",
+          "z"
+        ],
+        "work": 2,
+        "count": 10,
+        "threshold": 10
+      },
+      {
+        "lane": "R",
+        "operation": "qualify",
+        "identifiers": [
+          "x"
+        ],
+        "work": 1,
+        "count": 2,
+        "threshold": 4
+      },
+      {
+        "lane": "R",
+        "operation": "qualify",
+        "identifiers": [
+          "u",
+          "v"
+        ],
+        "work": 3,
+        "count": 0,
+        "threshold": 1
+      }
+    ],
+    "remaining_work": 3
+  },
+  "endpoints": {
+    "rates": {
+      "VP": "4",
+      "R": "26/7"
+    },
+    "choice": "VP",
+    "credits": [
+      {
+        "lane": "VP",
+        "gain": 8,
+        "time": 2
+      },
+      {
+        "lane": "R",
+        "gain": 8,
+        "time": 1
+      }
+    ],
+    "answer": "v",
+    "trace": [
+      {
+        "lane": "VP",
+        "operation": "score",
+        "identifiers": [
+          "x",
+          "y",
+          "z"
+        ],
+        "work": 2,
+        "count": 10,
+        "threshold": 10
+      },
+      {
+        "lane": "R",
+        "operation": "qualify",
+        "identifiers": [
+          "x"
+        ],
+        "work": 1,
+        "count": 2,
+        "threshold": 4
+      },
+      {
+        "lane": "VP",
+        "operation": "score",
+        "identifiers": [
+          "u",
+          "v"
+        ],
+        "work": 2,
+        "count": 2,
+        "threshold": 4
+      },
+      {
+        "lane": "R",
+        "operation": "qualify",
+        "identifiers": [
+          "u",
+          "v"
+        ],
+        "work": 2,
+        "count": 0,
+        "threshold": 1
+      }
+    ],
+    "remaining_work": 4
+  },
+  "pending_weight": [
+    {
+      "theta": "1/4",
+      "initial_r_rate": "2",
+      "separate_score_rate": "9/8",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "1/2",
+      "initial_r_rate": "2",
+      "separate_score_rate": "3/4",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "3/4",
+      "initial_r_rate": "2",
+      "separate_score_rate": "3/8",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "1",
+      "initial_r_rate": "2",
+      "separate_score_rate": "0",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "1/4",
+      "initial_r_rate": "1",
+      "separate_score_rate": "9/8",
+      "separate_actions": [
+        "V",
+        "P"
+      ],
+      "separate_work": 3,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "1/2",
+      "initial_r_rate": "1",
+      "separate_score_rate": "3/4",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "3/4",
+      "initial_r_rate": "1",
+      "separate_score_rate": "3/8",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    },
+    {
+      "theta": "1",
+      "initial_r_rate": "1",
+      "separate_score_rate": "0",
+      "separate_actions": [
+        "R",
+        "R",
+        "R"
+      ],
+      "separate_work": 6,
+      "joint_actions": [
+        "V",
+        "P"
+      ],
+      "joint_work": 3
+    }
+  ]
+}

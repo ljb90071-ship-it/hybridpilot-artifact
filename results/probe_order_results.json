@@ -1,0 +1,182 @@
+{
+  "unit": "one witness test or one distance score; cost starts at replay checkpoint",
+  "scope": "finite exact top-1 replay with rational work units",
+  "positive_probability": "1/2",
+  "r_work_before_x": 8,
+  "r_work_on_x": 2,
+  "r_fallback_on_z": 4,
+  "cases": [
+    {
+      "point_posting_length": 9,
+      "known_unread_point_positions": 3,
+      "paid_point_positions": 6,
+      "paid_score_units": 2,
+      "competitor_count": 3,
+      "point_rate": "3/5",
+      "relational_rate": "63/100",
+      "unstarted_probe_then_R_cost_at_end_of_scoring": "15",
+      "expected_work_from_checkpoint": {
+        "r_only": "12",
+        "vp_only": "31/2",
+        "probe_then_r": "9",
+        "pure_path_recost": "12",
+        "episode_rates": "12",
+        "optimal": "9"
+      },
+      "optimal_first_lane": "VP",
+      "reachable_decision_states_checked": 1543,
+      "observed_fixture_branches": {
+        "negative": {
+          "r_only": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "vp_only": {
+            "work": 28,
+            "first": "VP",
+            "answer": "incumbent"
+          },
+          "probe_then_r": {
+            "work": 15,
+            "first": "VP",
+            "answer": "incumbent"
+          },
+          "pure_path_recost": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "episode_rates": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "optimal": {
+            "work": 15,
+            "first": "VP",
+            "answer": "incumbent"
+          }
+        },
+        "positive": {
+          "r_only": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "vp_only": {
+            "work": 3,
+            "first": "VP",
+            "answer": "x"
+          },
+          "probe_then_r": {
+            "work": 3,
+            "first": "VP",
+            "answer": "x"
+          },
+          "pure_path_recost": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "episode_rates": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "optimal": {
+            "work": 3,
+            "first": "VP",
+            "answer": "x"
+          }
+        }
+      }
+    },
+    {
+      "point_posting_length": 13,
+      "known_unread_point_positions": 7,
+      "paid_point_positions": 6,
+      "paid_score_units": 2,
+      "competitor_count": 3,
+      "point_rate": "3/5",
+      "relational_rate": "63/100",
+      "unstarted_probe_then_R_cost_at_end_of_scoring": "19",
+      "expected_work_from_checkpoint": {
+        "r_only": "12",
+        "vp_only": "39/2",
+        "probe_then_r": "13",
+        "pure_path_recost": "12",
+        "episode_rates": "12",
+        "optimal": "12"
+      },
+      "optimal_first_lane": "R",
+      "reachable_decision_states_checked": 1783,
+      "observed_fixture_branches": {
+        "negative": {
+          "r_only": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "vp_only": {
+            "work": 32,
+            "first": "VP",
+            "answer": "incumbent"
+          },
+          "probe_then_r": {
+            "work": 19,
+            "first": "VP",
+            "answer": "incumbent"
+          },
+          "pure_path_recost": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "episode_rates": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          },
+          "optimal": {
+            "work": 14,
+            "first": "R",
+            "answer": "incumbent"
+          }
+        },
+        "positive": {
+          "r_only": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "vp_only": {
+            "work": 7,
+            "first": "VP",
+            "answer": "x"
+          },
+          "probe_then_r": {
+            "work": 7,
+            "first": "VP",
+            "answer": "x"
+          },
+          "pure_path_recost": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "episode_rates": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          },
+          "optimal": {
+            "work": 10,
+            "first": "R",
+            "answer": "x"
+          }
+        }
+      }
+    }
+  ]
+}

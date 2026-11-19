@@ -170,5 +170,17 @@
       0.9900990099009901,
       1.01
     ]
+  },
+  "completion_controls": {
+    "file": "results/simple_controls.csv",
+    "requests_per_family": 600,
+    "separate_histories": "component gain/time histories with logical closure and the same next required VP primitive",
+    "endpoint_credit": "global decrease since episode open, with the same joint priors and own executed time"
+  },
+  "saved_state_replays": {
+    "attribution": "results/attribution_replay.json",
+    "probe_order": "results/probe_order_results.json",
+    "movielens": "results/movielens_replay.json",
+    "movielens_per_query": "results/movielens_per_query.csv"
   }
 }

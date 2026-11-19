@@ -26,10 +26,14 @@ not assert that changing a runtime slice budget preserves latency.
 
 ## Added completion controls and geometry
 
-simple_controls.csv supplies Table 4: 15 policy/family rows, 600 requests each,
+simple_controls.csv supplies Table 4: 21 policy/family rows, 600 requests each,
 full-query geometric-mean ms. VP-only and R-only commit to a complete path;
-OnceCost chooses once at the shared prefix boundary. Cumulative uses the same
-own-slice attribution and grouping as HybridPilot with no forgetting.
+OnceCost chooses once at the shared prefix boundary. The remaining controls
+start from the same full-query workloads. Separate histories uses the next
+required vector or point operation's rate and updates each component at cohort
+closure. Endpoint credit uses the global drop during each joint episode's
+lifetime, with the same dispatch and costs. Cumulative retains own-slice
+attribution and grouping with a cumulative history.
 
 calibration_and_cumulative.json supplies Table 2 (absolute mean gain/time
 pairs from 128 calibration states per family), the 120-state Media completion
@@ -88,3 +92,16 @@ For each family/baseline, exp(sum(log_ratio_sum)/600) reproduces its family rati
 from latency.csv or simple_controls.csv. Table 5 rounds ratios to three decimals.
 Counts partition requests, not repeated runs; no uncertainty interval is inferred
 from these aggregate rows. analysis/check_strata.py checks these relations.
+
+
+## Matched replays
+
+- attribution_replay.json tracks each safe slice, the gain and time of closed
+  episodes, and the saved-state decision under own-slice and endpoint credit.
+  The pending-weight rows use separate scoring/probing histories and report
+  complete work units for the two possible relational priors.
+- probe_order_results.json gives exact post-checkpoint expected work, the branch
+  outcomes, and state counts for the two unread posting lengths in Section 6.4.
+- movielens_replay.json gives the 168-query SQLite overlap results, score
+  comparisons, and one concrete query. movielens_per_query.csv contains the individual query counters. The [replay guide](../docs/movielens.md)
+  explains how the plan, counts, and data files map to the paper.

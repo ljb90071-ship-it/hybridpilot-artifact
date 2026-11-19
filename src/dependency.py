@@ -1,4 +1,4 @@
-"""Section 4.1: dependent work and the explicit unit-16 refresh."""
+"""Regression fixture for dependent work and an explicit unit-16 refresh."""
 import json
 from pathlib import Path
 

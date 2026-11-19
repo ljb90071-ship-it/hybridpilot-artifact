@@ -52,11 +52,13 @@ remaining advances after survival to position 2. The paper's hazard calibration,
 backoff, vector histograms and RankBenefit lookahead are described by the
 configuration and manuscript; the finite executor supplies the saved-work accounting layer.
 
-`dependency.run` is the Section 4.1 example: 64 IDs in A, 1,000 in B, an incumbent
-at distance 10, and a decisive witness at distance 1. Split selection includes
-its explicit vector refresh at unit 16. The pooled comparison changes grouping
-and consumer-first dispatch together. Its 18/2 work-unit outcomes are not the
-factorial comparison in Figure 2.
+The matched attribution replay in [analysis/replay_attribution.py](../analysis/replay_attribution.py)
+holds the committed execution fixed through the R qualification for x. It compares
+own-slice and endpoint credit at that checkpoint, then resumes both controllers
+using the resulting rates. The same script checks partial credit at fixed
+pending weights. [analysis/check_probe_order.py](../analysis/check_probe_order.py)
+compares actual continuation work on two saved top-1 states with different unread
+posting lengths, using the same scoring and qualification contracts.
 
 ## Relationship to the system
 

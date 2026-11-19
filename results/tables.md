@@ -73,6 +73,12 @@ Generated from the supplied CSV files; times and aggregation are defined in resu
 | OnceCost | Catalog | 600 | 68 |
 | OnceCost | Documents | 600 | 94 |
 | OnceCost | Media | 600 | 129 |
+| Separate histories | Catalog | 600 | 64 |
+| Separate histories | Documents | 600 | 91 |
+| Separate histories | Media | 600 | 124 |
+| Endpoint credit | Catalog | 600 | 61 |
+| Endpoint credit | Documents | 600 | 86 |
+| Endpoint credit | Media | 600 | 116 |
 | Cumulative | Catalog | 600 | 59 |
 | Cumulative | Documents | 600 | 83 |
 | Cumulative | Media | 600 | 111 |

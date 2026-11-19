@@ -3,9 +3,10 @@
 **HybridPilot: Crediting Completion Work in Exact Vector–Relational Top-k Queries**
 
 HybridPilot credits completed dependent work to the lane that performed it,
-while keeping unfinished work visible in scheduling decisions. Its response analysis connects logical decay to changes in the remaining query work. Follow the
-mechanism through saved-work completion traces, invariant checks and result
-tables, starting with the [paper map](paper-map.md).
+while keeping unfinished work visible in scheduling decisions. The matched replay shows how changing credit alone can change the next path.
+The saved probe comparison follows two different unread posting lengths from
+the same observed rates. Follow these examples and the workload comparisons
+using the [paper map](paper-map.md).
 
 ## Navigate
 
@@ -40,7 +41,7 @@ The checks cover 2,500 instances across five scheduling modes: exact answers,
 monotone completion counts, single gain attribution, the two-ID admission bound,
 saved-work progress and invariance under extra yields on an unchanged primitive
 trace. Focused cases cover cancellation, conditional residual work, ties,
-buffered positives and the 18-versus-2 example. Both commands write JSON.
+buffered positives and a producer-refresh case. Both commands write JSON.
 
 ## Analyze results, response, and geometry
 
@@ -75,3 +76,21 @@ The [paired witness-order comparison](results/phase_order.csv) and its
 [design](results/phase_order_design.json) isolate early versus late qualifying
 witnesses while preserving query answers. Figure 1 connects score production to the completed probe observation, then
 shows how credit changes when the relational lane finishes first.
+
+
+## Replay credit and the saved probe
+
+Run these standard-library checks from the repository root:
+
+~~~sh
+python analysis/replay_attribution.py --output attribution-replay.json
+python analysis/check_probe_order.py --output probe-order-results.json
+~~~
+
+The first script replays Figure 1 and compares the next decision under two
+credit rules. It also checks partial credit for a near score against joint
+score-and-probe history. The second enumerates legal continuations from two
+saved top-1 states. Output costs are exact work units.
+
+[MovieLens 100K replay](docs/movielens.md) gives the SQLite query protocol,
+the official data link, and the attribution and native SQL score counts.
