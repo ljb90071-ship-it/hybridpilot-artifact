@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7in" height="2.65277778in" viewBox="0 0 1008 382">
+<title>One score, two qualification paths, one tighter threshold</title>
+<desc>At threshold 10, block A holds unscored candidates y, z and x. Scoring costs two work units and reveals distances eight, nine and four. All ten competitors remain. A point probe or a relational batch qualifies x and commits it to the heap in place of the incumbent. The point probe path records eight removals and three work units for VP. The relational path records eight removals and one work unit for R, plus zero removals and two work units for VP. With threshold four, y and z are too far and B's lower bound five prunes five documents. Block D has lower bound one and two competitors left.</desc>
+<defs>
+  <marker id="ink-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0L8 4L0 8Z" fill="#283238"/>
+  </marker>
+  <marker id="score-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0L9 4.5L0 9Z" fill="#69418f"/>
+  </marker>
+  <marker id="vp-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0L8 4L0 8Z" fill="#245e7a"/>
+  </marker>
+  <marker id="r-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0L8 4L0 8Z" fill="#964d2d"/>
+  </marker>
+  <marker id="threshold-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0L9 4.5L0 9Z" fill="#196758"/>
+  </marker>
+  <pattern id="retired" width="6" height="6" patternUnits="userSpaceOnUse">
+    <path d="M0 6L6 0" fill="none" stroke="#d3a893" stroke-width="1"/>
+  </pattern>
+  <g id="candidate">
+    <rect x="-22" y="-28" width="44" height="56" rx="6" fill="#edf2f5" stroke="#9aa9b2" stroke-width="1.3"/>
+    <path d="M-15 2H15" stroke="#acb7bd" stroke-width="1.05"/>
+  </g>
+  <g id="tracked-candidate">
+    <rect x="-22" y="-28" width="44" height="56" rx="6" fill="#efe4f5" stroke="#69418f" stroke-width="2"/>
+    <path d="M-15 2H15" stroke="#967bad" stroke-width="1.15"/>
+  </g>
+  <g id="retired-score">
+    <circle r="8" fill="#f7e6df" stroke="#964d2d" stroke-width="1.2"/>
+    <path d="M-3.6 -3.6L3.6 3.6M-3.6 3.6L3.6 -3.6" fill="none" stroke="#8b3929" stroke-width="1.7"/>
+  </g>
+  <path id="bound-pointer" d="M-6 5L0 -5L6 5Z"/>
+</defs>
+<rect width="1008" height="382" fill="#fff"/>
+<g font-family="Arial, sans-serif" font-size="17" fill="#171717">
+  <g id="movement-and-attribution">
+    <text x="12" y="22" font-size="20" font-weight="bold">(a) Score three candidates, then qualify x</text>
+    <text x="12" y="49" font-size="18" font-weight="bold">Unscored block A</text>
+    <text x="231" y="49" font-size="18" font-weight="bold">Pending qualification</text>
+    <text x="826" y="49" font-size="18" font-weight="bold">Top-1 heap</text>
+
+    <!-- The same generated page represents one block. Candidate identities are vector overlays. -->
+    <image id="block-a-page" x="11" y="65" width="156" height="63.123" xlink:href="components/block_page.png"/>
+    <g text-anchor="middle" font-size="18" font-weight="bold">
+      <rect x="44" y="77" width="28" height="27" rx="4" fill="#fafafa" stroke="#8b979d"/>
+      <rect x="79" y="77" width="28" height="27" rx="4" fill="#fafafa" stroke="#8b979d"/>
+      <rect x="114" y="77" width="28" height="27" rx="4" fill="#efe4f5" stroke="#69418f" stroke-width="1.8"/>
+      <text x="58" y="96">y</text><text x="93" y="96">z</text><text x="128" y="96">x</text>
+    </g>
+    <path d="M175 93H224" stroke="#69418f" stroke-width="2.3" fill="none" marker-end="url(#score-arrow)"/>
+    <text x="199" y="76" text-anchor="middle">Score</text>
+    <text x="199" y="117" text-anchor="middle">2 work</text>
+
+    <use xlink:href="#candidate" x="259" y="96"/>
+    <use xlink:href="#candidate" x="314" y="96"/>
+    <use xlink:href="#tracked-candidate" x="369" y="96"/>
+    <g text-anchor="middle">
+      <g font-size="19" font-weight="bold">
+        <text x="259" y="91">y</text><text x="314" y="91">z</text><text x="369" y="91">x</text>
+      </g>
+      <text x="259" y="119">8</text><text x="314" y="119">9</text><text x="369" y="119">4</text>
+    </g>
+    <text x="12" y="151">Other blocks: B (5), D (2)</text>
+    <text x="231" y="151">3 pending, 7 unscored</text>
+    <g font-weight="bold">
+      <text x="12" y="178">C = 10</text>
+      <text x="231" y="178">C = 10</text>
+    </g>
+
+    <!-- Both alternative branches consume the same pending x. -->
+    <path d="M391 96H418" stroke="#69418f" stroke-width="2.3" fill="none"/>
+    <circle cx="418" cy="96" r="3.3" fill="#69418f"/>
+    <path d="M418 96L443 79H465" stroke="#245e7a" stroke-width="2.2" fill="none" marker-end="url(#vp-arrow)"/>
+    <path d="M418 96L443 151H465" stroke="#964d2d" stroke-width="2.2" stroke-dasharray="6 4" fill="none" marker-end="url(#r-arrow)"/>
+    <text x="445" y="109" font-weight="bold">or</text>
+
+    <g id="point-probe">
+      <rect x="466" y="52" width="235" height="53" rx="7" fill="#e6f1f5" stroke="#7ea6b7" stroke-width="1.15"/>
+      <path d="M469 60V97" stroke="#245e7a" stroke-width="4.1"/>
+      <text x="481" y="75" font-size="18" font-weight="bold">Point probe (P)</text>
+      <text x="481" y="97">VP gains 8 · 3 work</text>
+    </g>
+    <g id="relational-batch">
+      <rect x="466" y="122" width="235" height="71" rx="7" fill="#f8ede5" stroke="#bd8e72" stroke-width="1.15"/>
+      <path d="M469 130V185" stroke="#964d2d" stroke-width="4.1" stroke-dasharray="7 3"/>
+      <text x="481" y="144" font-size="18" font-weight="bold">Relational batch (R)</text>
+      <text x="481" y="166">R gains 8 · 1 work</text>
+      <text x="481" y="186">VP gains 0 · 2 work</text>
+    </g>
+    <path d="M701 79H722L752 108" stroke="#245e7a" stroke-width="2.2" fill="none"/>
+    <path d="M701 151H722L752 108" stroke="#964d2d" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+    <circle cx="752" cy="108" r="3.3" fill="#283238"/>
+    <path d="M752 108H852" stroke="#283238" stroke-width="2.2" fill="none" marker-end="url(#ink-arrow)"/>
+    <text x="792" y="93" text-anchor="middle">Commit x</text>
+
+    <g id="heap-slot">
+      <path d="M843 115V144Q843 149 849 149H904Q910 149 910 144V115" fill="#e0efe9" stroke="#196758" stroke-width="2.1"/>
+      <use xlink:href="#tracked-candidate" x="875" y="110"/>
+      <text x="875" y="106" text-anchor="middle" font-size="19" font-weight="bold">x</text>
+      <text x="875" y="133" text-anchor="middle">4</text>
+      <path d="M910 108H953" stroke="#8c9b9a" stroke-width="1.5" fill="none" marker-end="url(#ink-arrow)"/>
+      <rect x="958" y="94" width="38" height="29" rx="5" fill="#f0f2f1" stroke="#a1aba8" stroke-dasharray="3 2"/>
+      <text x="977" y="114" text-anchor="middle">10</text>
+      <text x="920" y="151">leaves</text>
+    </g>
+  </g>
+
+  <path d="M12 203H996" stroke="#d4dcdd" stroke-width="1.2"/>
+  <g id="threshold-effect">
+    <text x="12" y="229" font-size="20" font-weight="bold">(b) Prune against the new threshold</text>
+    <g transform="translate(12 254)">
+      <text x="0" y="18" font-size="23" font-weight="bold">C: 10 → 2</text>
+      <text x="0" y="46">1 goes into the heap</text>
+      <text x="0" y="70">2 scored docs excluded</text>
+      <text x="0" y="94">5 are pruned with B</text>
+    </g>
+
+    <!-- The affine distance mapping is x_plot = 285 + 69*d. -->
+    <rect x="285" y="269" width="276" height="78" fill="#eff6f2"/>
+    <rect x="561" y="269" width="414" height="78" fill="#f9eee7"/>
+    <path d="M561 263V348" stroke="#196758" stroke-width="2.2"/>
+    <path d="M975 263V348" stroke="#7e8b8f" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <path d="M969 254H567" stroke="#196758" stroke-width="1.9" fill="none" marker-end="url(#threshold-arrow)"/>
+    <text x="285" y="256">Distance or block lower bound</text>
+    <text x="771" y="246" text-anchor="middle" font-weight="bold">Threshold 10 → 4</text>
+    <path d="M285 309H975" stroke="#d8e2e0" stroke-width="1"/>
+    <text x="274" y="295" text-anchor="end">Scores</text>
+    <text x="274" y="331" text-anchor="end">Bounds</text>
+
+    <circle cx="561" cy="291" r="7.4" fill="#efe4f5" stroke="#69418f" stroke-width="1.8"/>
+    <text x="546" y="297" text-anchor="end" font-weight="bold">x in heap</text>
+    <use xlink:href="#retired-score" x="837" y="291"/>
+    <use xlink:href="#retired-score" x="906" y="291"/>
+    <text x="825" y="297" text-anchor="end" font-weight="bold">y</text>
+    <text x="894" y="297" text-anchor="end" font-weight="bold">z</text>
+
+    <g id="remaining-block-d">
+      <use xlink:href="#bound-pointer" x="354" y="327" fill="#196758"/>
+      <rect x="369" y="317" width="155" height="23" rx="4" fill="#dcece3" stroke="#9bb9ac"/>
+      <text x="379" y="334">D · 2 docs remain</text>
+    </g>
+    <g id="retired-block-b">
+      <use xlink:href="#bound-pointer" x="630" y="327" fill="#964d2d"/>
+      <rect x="646" y="317" width="168" height="23" rx="4" fill="#f8e6da" stroke="#cea984"/>
+      <rect x="647" y="318" width="13" height="21" fill="url(#retired)"/>
+      <text x="668" y="334">B · 5 docs pruned</text>
+    </g>
+    <path d="M285 348H985" stroke="#283238" stroke-width="1.55" fill="none" marker-end="url(#ink-arrow)"/>
+    <g stroke="#283238" stroke-width="1.25">
+      <path d="M285 348V354M354 348V354M561 348V354M630 348V354M837 348V354M906 348V354M975 348V354"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="285" y="374">0</text><text x="354" y="374">1</text>
+      <text x="561" y="374">4</text><text x="630" y="374">5</text>
+      <text x="837" y="374">8</text><text x="906" y="374">9</text><text x="975" y="374">10</text>
+    </g>
+  </g>
+</g>
+</svg>

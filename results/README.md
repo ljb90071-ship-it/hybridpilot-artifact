@@ -19,10 +19,17 @@ per-query records or error bars are inferred from these summaries. Setup index
 and calibration time is excluded from query latency; the setup times reported
 in Section 7.1 are 91/84/129 seconds for Catalog/Documents/Media.
 
-Figure 1 illustrates a 10-to-10-to-2 competitor-count transition. Scoring transfers three IDs to pending qualification; P or R then qualifies one and retires seven through the threshold. P completion yields joint VP gain/time (8,3); R completion yields R (8,1) and canceled VP (0,2). Its times are illustrative work units. Figure 2(b)
-uses a base-4 logarithmic budget axis and an explicitly labeled nonzero response
-axis; the left bar plot begins at zero. The fixed-trace partition identity does
-not assert that changing a runtime slice budget preserves latency.
+Figure 1 illustrates a 10-to-10-to-2 competitor-count transition. Scoring
+transfers three IDs to pending qualification. P or R then qualifies one, and
+the tighter threshold excludes seven. P completion records joint VP gain/time
+(8,3). R completion records R (8,1) and canceled VP (0,2). Durations are in
+illustrative work units.
+
+Figure 2 uses the same 100–145 ms completion-time axis in both panels. Open
+markers identify separate V/P histories and filled markers identify joint VP
+history. Squares mark updates at physical yields and circles mark updates at
+logical closure. The shaded 1 ms slice row shares the joint/physical and
+joint/logical values of 115 and 106 ms with the grouping comparison.
 
 ## Added completion controls and geometry
 

@@ -18,6 +18,24 @@ using the [paper map](paper-map.md).
 - [Checks](tests/check_core.py) and [check summary](examples/core-checks.json).
 - [Figure 1](figures/episodes.pdf), [Figure 2](figures/accounting.pdf), and [readable result tables](results/tables.md).
 
+## Recreate the figures
+
+The [Figure 1 SVG](figure_sources/episodes.svg) holds the candidate transitions,
+heap, and threshold axis as editable vectors. Its
+[transparent page component](figure_sources/components/block_page.png) comes
+from the ImageGen asset collection `Iceberg_数据页与证据覆片/data.png` and
+represents the backing page of block A. Figure 2 reads the
+[grouping comparison](results/accounting.csv) and the [slice sweep](results/slices.csv).
+Both panels use the same 100–145 ms scale. The shaded 1 ms row repeats the
+joint-history points from the grouping comparison.
+
+Run from the repository root with CairoSVG for Figure 1 and Matplotlib for Figure 2.
+
+~~~sh
+python figure_sources/export_episodes.py
+python figure_sources/plot_accounting.py --results results
+~~~
+
 ## Run
 
 Use Python 3.10 or later and its standard library. Run from the repository root;
@@ -74,8 +92,8 @@ python analysis/check_response.py
 It writes exact rational results to results/response_computed.csv and JSON.
 The [paired witness-order comparison](results/phase_order.csv) and its
 [design](results/phase_order_design.json) isolate early versus late qualifying
-witnesses while preserving query answers. Figure 1 connects score production to the completed probe observation, then
-shows how credit changes when the relational lane finishes first.
+witnesses while preserving query answers. Figure 1 follows the same candidate
+from scoring to the heap and shows the work credited to each alternative path.
 
 
 ## Replay credit and the saved probe
